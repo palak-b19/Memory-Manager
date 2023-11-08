@@ -90,7 +90,9 @@ Input Parameter: Nothing
 Returns: Nothing
 
 
+---------------------------------------------------------------------------------------------------------------------------------------------------
 ********************************************************  How it is implemented - *****************************************************************
+---------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 Memory Allocation:
@@ -121,7 +123,9 @@ Input Parameter: Nothing
 Returns: Nothing
 */
 
+---------------------------------------------------------------------------------------------------------------------------------------------------
 *********************************************************  How it is implemented - *****************************************************************
+---------------------------------------------------------------------------------------------------------------------------------------------------
 
 The purpose of the mems_finish() function is to free all the memory allocated during the MeMS execution. The function works as follows:
 
@@ -182,8 +186,9 @@ Parameter: The size of the memory the user program wants
 Returns: MeMS Virtual address (that is created by MeMS)
 
 
+---------------------------------------------------------------------------------------------------------------------------------------------------
 ********************************************************  How it is implemented - *****************************************************************
-
+---------------------------------------------------------------------------------------------------------------------------------------------------
 
 The code uses a linked list structure for memory allocation. There are two main types of nodes: freeList_Main_Node and subList_sub_Node.
 
@@ -230,8 +235,9 @@ Returns: Nothing but should print the necessary information on STDOUT
 
 
 
+---------------------------------------------------------------------------------------------------------------------------------------------------
 ********************************************************  How it is implemented - *****************************************************************
-
+---------------------------------------------------------------------------------------------------------------------------------------------------
 
 Purpose:
 Display MeMS system statistics and details about main and sub-chains.
@@ -281,8 +287,9 @@ Parameter: MeMS Virtual address (that is created by MeMS)
 Returns: MeMS physical address mapped to the passed ptr (MeMS virtual address).
 
 
+---------------------------------------------------------------------------------------------------------------------------------------------------
 ********************************************************  How it is implemented - *****************************************************************
-
+---------------------------------------------------------------------------------------------------------------------------------------------------
 
 The mems_get() function is a critical part of the Memory Management System (MeMS) that facilitates the retrieval of the MeMS physical address associated with a provided MeMS virtual address. This function is crucial for translating virtual addresses into their corresponding physical addresses, enabling users to work with memory allocations accurately.
 
