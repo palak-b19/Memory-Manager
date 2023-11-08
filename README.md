@@ -402,14 +402,15 @@ Optimisation consideration in mems_free()
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
-Example Output
+                                                                                Self Generated Test cases 
 
+Example case 1 -
 
-
-Self Generated Test cases -  (Example.c)
+(Example.c)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
+Example Code 1 -
 
 // include other header files as needed
 #include"mems.h"
@@ -474,9 +475,9 @@ int main(int argc, char const *argv[])
 
 Output 
 
+Example Output 1 -
 
-
-
+![image](https://github.com/palak-b19/Memory-Manager/assets/119069053/b578d142-6ac2-4a64-99fc-3eafeb161d61)
 
 
 
