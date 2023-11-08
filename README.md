@@ -1,4 +1,4 @@
-                                                     MeMS: Memory Management System [CSE231 OS Assignment 3]
+                                         MeMS: Memory Management System [CSE231 OS Assignment 3]
 
 
 Documentation
@@ -36,7 +36,7 @@ MAIN[starting_mems_vitual_address:ending_mems_vitual_address] -> <HOLE or PROCES
 ------------------------------------------------------------------  CODE LOGIC --------------------------------------------------------------------
 
 
-                                                           Basic Structure and Implementation
+                                        Basic Structure and Implementation
 
 
 Data Structures:
@@ -402,9 +402,9 @@ Optimisation consideration in mems_free()
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
-                                                            Self Generated Test cases 
+                                                  Self Generated Test cases 
 
-Example case 1 -
+Example case 1 -  
 
 (Example.c)
 
