@@ -2,7 +2,7 @@
 
 # Introduction
 
-MeMS is a simple memory management system implemented in C. It allows to allocate and manage memory efficiently by keeping track of available memory spaces and optimizing memory usage.
+MeMS is a `simple memory management system` implemented in C. It allows to allocate and manage memory efficiently by keeping track of available memory spaces and optimizing memory usage.
 
 # Documentation
 
@@ -23,9 +23,10 @@ $ ./example
 Sub-chain Length array: <Array denoting the length of the subchains>
 
 Example Output
-PAGE_SIZE= 4096 Bytes
 
-Starting MeMS Virtual Address= 1000
+`PAGE_SIZE`= 4096 Bytes
+
+`Starting MeMS Virtual Address` = 1000
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -83,10 +84,10 @@ Initializes all the required parameters for the MeMS system. The main parameters
 2. the starting MeMS virtual address from which the heap in our MeMS virtual address space will start.
 3. any other global variable that you want for the MeMS implementation can be initialized here.
 
-'Input Parameter:'
+ `Input Parameter:`
 Nothing
 
-'Returns:'
+`Returns:`
 Nothing
 
 
@@ -97,7 +98,7 @@ Nothing
 
 # Memory Allocation:
 
-Utilizes mmap() to allocate memory for the initial head node, which represents the start of the MeMS system.
+Utilizes `mmap()` to allocate memory for the initial head node, which represents the start of the MeMS system.
 Initializes the free list, which is a linked structure comprising nodes for managing memory segments.
 Main Node Initialization:
 
@@ -120,10 +121,10 @@ Provides debug logs about the size, address, and pointers of the initialized fre
 This function will be called at the end of the MeMS system and its main job is to unmap the 
 allocated memory using the munmap system call.
 
-**Input Parameter:**
+`Input Parameter:`
 Nothing
 
-**Returns:**
+`Returns:`
 Nothing
 
 */
