@@ -44,53 +44,50 @@ MAIN[starting_mems_vitual_address:ending_mems_vitual_address] -> <HOLE or PROCES
 
 # Data Structures:
 
--struct freeList_Main_Node: Represents a main node in the free list.
--prev and next: Pointers to the previous and next main nodes.
--size: Size of the memory block allocated in the node.
--virtualAddress_Start and physicalAddress_Start: Start virtual and physical addresses of the allocated memory.
--virtualAddress_End and physicalAddress_End: End virtual and physical addresses of the allocated memory.
--sub_head and sub_tail: Pointers to the start and end of the sub-list.
--struct subList_sub_Node: Represents a sub-node in the sub-list.
--prev_sub and next_sub: Pointers to the previous and next sub-nodes.
--virtualAddress_subStart and physicalAddress_subStart: Start virtual and physical addresses of the sub-node.
--virtualAddress_subEnd and physicalAddress_subEnd: End virtual and physical addresses of the sub-node.
--type: Indicates whether the sub-node is a HOLE or PROCESS type.
--size: Size of the memory block allocated in the sub-node.
--Functionality:
--mems_init(): Initializes the MeMS system.
+- `struct freeList_Main_Node`: Represents a main node in the free list.
+  - `prev` and `next`: Pointers to the previous and next main nodes.
+  - `size`: Size of the memory block allocated in the node.
+  - `virtualAddress_Start` and `physicalAddress_Start`: Start virtual and physical addresses of the allocated memory.
+  - `virtualAddress_End` and `physicalAddress_End`: End virtual and physical addresses of the allocated memory.
+  - `sub_head` and `sub_tail`: Pointers to the start and end of the sub-list.
+- `struct subList_sub_Node`: Represents a sub-node in the sub-list.
+  - `prev_sub` and `next_sub`: Pointers to the previous and next sub-nodes.
+  - `virtualAddress_subStart` and `physicalAddress_subStart`: Start virtual and physical addresses of the sub-node.
+  - `virtualAddress_subEnd` and `physicalAddress_subEnd`: End virtual and physical addresses of the sub-node.
+  - `type`: Indicates whether the sub-node is a HOLE or PROCESS type.
+  - `size`: Size of the memory block allocated in the sub-node.
+ 
 
-Allocates the initial main node and sets up the structure for the MeMS system.
-mems_finish(): Cleans up the MeMS system.
+# Functionality
 
-Unmaps allocated memory used by the MeMS system.
-mems_malloc(size_t size_asked): Allocates memory in the MeMS system.
-
-Searches for available memory in the free list and, if needed, allocates more memory using mmap.
-Manages the main and sub-nodes to represent allocated and free memory segments.
-mems_get(void *v_ptr): Returns the physical address mapped to a given virtual address.
-
-mems_free(void *v_ptr): Frees up memory pointed by a virtual address and adds it back to the free list.
-
-mems_print_stats(): Displays statistics about memory usage in the MeMS system.
+- `mems_init()`: Initializes the MeMS system.
+- `mems_finish()`: Cleans up the MeMS system.
+- `mems_malloc(size_t size_asked)`: Allocates memory in the MeMS system.
+- `mems_get(void *v_ptr)`: Returns the physical address mapped to a given virtual address.
+- `mems_free(void *v_ptr)`: Frees up memory pointed by a virtual address and adds it back to the free list.
+- `mems_print_stats()`: Displays statistics about memory usage in the MeMS system.
 
 
-Enumerated Types:
+# Enumerated Types:
 
-enum NodeType: Defines the types of nodes within the MeMS system - HOLE (unused memory) and PROCESS (allocated memory).
-
+- `enum NodeType`: Defines the types of nodes within the MeMS system - HOLE (unused memory) and PROCESS (allocated memory).
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
                                                       Function description for each function 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
-(a)void mems_init()
+# (a)void mems_init()
 
 Initializes all the required parameters for the MeMS system. The main parameters to be initialized are:
 1. the head of the free list i.e. the pointer that points to the head of the free list
 2. the starting MeMS virtual address from which the heap in our MeMS virtual address space will start.
 3. any other global variable that you want for the MeMS implementation can be initialized here.
-Input Parameter: Nothing
-Returns: Nothing
+
+**Input Parameter:**
+Nothing
+
+**Returns:**
+Nothing
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -118,12 +115,17 @@ Provides debug logs about the size, address, and pointers of the initialized fre
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-(b)void mems_finish()
+# (b)void mems_finish()
 
 This function will be called at the end of the MeMS system and its main job is to unmap the 
 allocated memory using the munmap system call.
-Input Parameter: Nothing
-Returns: Nothing
+
+**Input Parameter:**
+Nothing
+
+**Returns:**
+Nothing
+
 */
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -185,8 +187,13 @@ the free list accordingly.
 
 Note that while mapping using mmap do not forget to reuse the unused space from mapping
 by adding it to the free list.
-Parameter: The size of the memory the user program wants
-Returns: MeMS Virtual address (that is created by MeMS)
+
+**Parameter:**
+The size of the memory the user program wants
+
+**Returns:**
+MeMS Virtual address (created by MeMS)
+
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -233,9 +240,12 @@ this function print the stats of the MeMS system like
 1. How many pages are utilised by using the mems_malloc
 2. how much memory is unused i.e. the memory that is in freelist and is not used.
 3. It also prints details about each node in the main chain and each segment (PROCESS or HOLE) in the sub-chain.
-Parameter: Nothing
-Returns: Nothing but should print the necessary information on STDOUT
 
+**Parameter:**
+Nothing
+
+**Returns:**
+Nothing but should print necessary information on STDOUT
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -274,8 +284,6 @@ Prints pages used, space unused, main chain length, and the sub-chain length arr
 The function starts traversing from the main node, examining each sub-node to locate the specific segment that includes the provided virtual address.
 Once the segment is identified, it computes the offset within that segment and translates it to the corresponding physical address.
 If the virtual address doesn't match any segment, the function returns NULL to indicate the absence of a mapped physical address.
-
-
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
