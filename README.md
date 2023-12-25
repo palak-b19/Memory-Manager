@@ -1,5 +1,9 @@
                                              MeMS: Memory Management System [CSE231 OS Assignment 3]
 
+# Introduction
+
+MeMS is a simple memory management system implemented in C. It allows to allocate and manage memory efficiently by keeping track of available memory spaces and optimizing memory usage.
+
 # Documentation
 
 
