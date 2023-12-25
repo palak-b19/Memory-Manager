@@ -1,4 +1,4 @@
-                                         MeMS: Memory Management System [CSE231 OS Assignment 3]
+                                             MeMS: Memory Management System [CSE231 OS Assignment 3]
 
 
 Documentation
@@ -36,7 +36,7 @@ MAIN[starting_mems_vitual_address:ending_mems_vitual_address] -> <HOLE or PROCES
 ------------------------------------------------------------------  CODE LOGIC --------------------------------------------------------------------
 
 
-                                        Basic Structure and Implementation
+                                                    Basic Structure and Implementation
 
 
 Data Structures:
@@ -236,7 +236,7 @@ Returns: Nothing but should print the necessary information on STDOUT
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-********************************************************  How it is implemented - *****************************************************************
+                                                           How it is implemented 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 Purpose:
@@ -288,7 +288,7 @@ Returns: MeMS physical address mapped to the passed ptr (MeMS virtual address).
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-********************************************************  How it is implemented - *****************************************************************
+                                                          How it is implemented 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 The mems_get() function is a critical part of the Memory Management System (MeMS) that facilitates the retrieval of the MeMS physical address associated with a provided MeMS virtual address. This function is crucial for translating virtual addresses into their corresponding physical addresses, enabling users to work with memory allocations accurately.
@@ -396,7 +396,7 @@ mems_free(void *v_ptr):
 
 
 
-********************************************************  Additional Considerations- **************************************************************
+                                                          Additional Considerations
 
 In mems_finish() - we are deallocating space occupied by the structure too -- complete clean up - mentioned in the functionality too
 
@@ -409,7 +409,7 @@ Optimisation consideration in mems_free()
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
-                                                  Self Generated Test cases 
+                                                          Self Generated Test cases 
 
 Example case 1 -  
 
