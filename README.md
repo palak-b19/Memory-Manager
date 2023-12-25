@@ -83,10 +83,10 @@ Initializes all the required parameters for the MeMS system. The main parameters
 2. the starting MeMS virtual address from which the heap in our MeMS virtual address space will start.
 3. any other global variable that you want for the MeMS implementation can be initialized here.
 
-**Input Parameter:**
+'Input Parameter:'
 Nothing
 
-**Returns:**
+'Returns:'
 Nothing
 
 
