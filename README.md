@@ -1,4 +1,4 @@
-# MeMS: Memory Management System [CSE231 OS Assignment 3]
+# MeMS: Memory Management System 
 
 # Introduction
 
