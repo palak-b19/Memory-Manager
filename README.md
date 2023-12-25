@@ -1,12 +1,11 @@
                                              MeMS: Memory Management System [CSE231 OS Assignment 3]
 
-
-Documentation
+# Documentation
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
-How to run the exmaple.c
+# How to run the exmaple.c
 After implementing functions in mems.h follow the below steps to run example.c file
 
 
@@ -39,7 +38,7 @@ MAIN[starting_mems_vitual_address:ending_mems_vitual_address] -> <HOLE or PROCES
                                                     Basic Structure and Implementation
 
 
-Data Structures:
+# Data Structures:
 
 -struct freeList_Main_Node: Represents a main node in the free list.
 -prev and next: Pointers to the previous and next main nodes.
@@ -95,7 +94,7 @@ Returns: Nothing
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Memory Allocation:
+# Memory Allocation:
 
 Utilizes mmap() to allocate memory for the initial head node, which represents the start of the MeMS system.
 Initializes the free list, which is a linked structure comprising nodes for managing memory segments.
@@ -145,7 +144,7 @@ Complete Cleanup:
 This process ensures the entire memory used by the MeMS system is deallocated and returned to the system.
 
 
-PSEUDOCODE EXPLANATION (logic building)
+# PSEUDOCODE EXPLANATION (logic building)
 
 mems_finish():
     traversal_main_node = head
@@ -172,7 +171,7 @@ mems_finish():
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-(c)void* mems_malloc(size_t size)
+# (c)void* mems_malloc(size_t size)
 
 Allocates memory of the specified size by reusing a segment from the free list if 
 a sufficiently large segment is available. 
@@ -222,7 +221,7 @@ It uses the mmap system call to allocate memory and updates the linked list node
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-(d)void mems_print_stats()
+# (d)void mems_print_stats()
 
 
 
@@ -239,7 +238,7 @@ Returns: Nothing but should print the necessary information on STDOUT
                                                            How it is implemented 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
-Purpose:
+# Purpose:
 Display MeMS system statistics and details about main and sub-chains.
 Gather information on utilized pages, unused memory, main chain length, and sub-chain lengths.
 Steps and Functionalities:
@@ -278,7 +277,7 @@ If the virtual address doesn't match any segment, the function returns NULL to i
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-(e)void *mems_get(void*v_ptr)
+# (e)void *mems_get(void*v_ptr)
 
 
 
@@ -295,10 +294,10 @@ The mems_get() function is a critical part of the Memory Management System (MeMS
 
 Here's an in-depth explanation of the mems_get() function:
 
-Objective:
+# Objective:
 The primary goal of mems_get() is to find and return the MeMS physical address associated with a given MeMS virtual address.
 
-Functionality:
+# Functionality:
 Input Parameters:
 
 The function takes a void *v_ptr parameter, representing the MeMS virtual address whose corresponding physical address needs to be determined.
@@ -321,7 +320,7 @@ If the provided virtual address doesn't match any segments in the MeMS system, t
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-(f)void mems_free(void *v_ptr)
+# (f)void mems_free(void *v_ptr)
 
 
 
@@ -333,7 +332,7 @@ Returns: nothing
 ********************************************************  How it is implemented - *****************************************************************
 
 
-Function Purpose:
+# Function Purpose:
 Objective: To free up memory pointed by a provided virtual address (v_ptr) and manage the free list accordingly.
 Data Structures: Utilizes linked list structures for main nodes and sub-nodes to represent memory segments.
 Explanation of Implementation:
@@ -362,7 +361,7 @@ The function aims to optimize the free list, ensuring efficient utilization of m
 It also adjusts pointers and sizes to reflect changes in the memory layout.
 
 
-PSUEDOCODE ( Logic Building )
+# PSUEDOCODE ( Logic Building )
 
 
 mems_free(void *v_ptr):
@@ -411,13 +410,13 @@ Optimisation consideration in mems_free()
 
                                                           Self Generated Test cases 
 
-Example case 1 -  
+# Example case 1 -  
 
 (Example.c)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
-Example Code 1 -
+# Example Code 1 -
 
 // include other header files as needed
 #include"mems.h"
@@ -482,7 +481,7 @@ int main(int argc, char const *argv[])
 
 Output 
 
-Example Output 1 -
+# Example Output 1 -
 
 ![image](https://github.com/palak-b19/Memory-Manager/assets/119069053/b578d142-6ac2-4a64-99fc-3eafeb161d61)
 
@@ -490,7 +489,7 @@ Example Output 1 -
 ![WhatsApp Image 2023-11-08 at 05 48 49_7a245b7d](https://github.com/palak-b19/Memory-Manager/assets/119069053/0a0e9755-ab89-4a53-854f-d446c0cdf3ad)
 
 
-Example case 2 -
+# Example case 2 -
 
 (Example.c) for case 2 
 
